@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     private float collisionDuration = 0f;
     private bool isColliding = false;
 
+    // sword
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
