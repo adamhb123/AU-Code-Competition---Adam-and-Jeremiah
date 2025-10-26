@@ -9,7 +9,10 @@ public class Player : MonoBehaviour
 
     // physics
     public Rigidbody2D myRigidBody;
-    public float speed = 12;
+    public int movementSpeed = 12;
+
+    // sprite flipping
+    private SpriteRenderer spriteRenderer;
 
     // health bar
     public HealthBar healthBar;
@@ -30,17 +33,30 @@ public class Player : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         moveValue = moveAction.ReadValue<Vector2>();
+
+        // Flip sprite based on horizontal movement
+        if (moveValue.x > 0)
+        {
+            // Moving right - flip sprite
+            spriteRenderer.flipX = true;
+        }
+        else if (moveValue.x < 0)
+        {
+            // Moving left - use default orientation
+            spriteRenderer.flipX = false;
+        }
     }
 
     void FixedUpdate()
     {
-        myRigidBody.linearVelocity = moveValue * speed;
+        myRigidBody.linearVelocity = moveValue * movementSpeed;
     }
 
     // health bar functions

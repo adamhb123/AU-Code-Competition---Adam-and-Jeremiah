@@ -60,14 +60,14 @@
         "*.asset": "yaml",
         "*.meta": "yaml",
         "*.prefab": "yaml",
-        "*.unity": "yaml",
+        "*.unity": "yaml"
     },
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "game_competition_2025.slnx",
+    "dotnet.defaultSolution": "AU-Code-Competition---Adam-and-Jeremiah.slnx",
     "unity-code-snippets.autoComplete.classes": false,
     "unity-code-snippets.autoComplete.methods": false,
     "unity-code-snippets.autoComplete.calls": false,
